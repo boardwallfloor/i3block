@@ -1,0 +1,68 @@
+[split]
+command=/home/media/.config/i3blocks/scripts/split-status/split-status
+markup=pango
+interval=1
+color=#ffffff
+
+[disk]
+command= echo $(df -h | grep "/$" | awk '{print $5}')
+markup=pango
+label=💿 
+color=#ffffff
+interval=30
+
+[volume-pulseaudio]
+command=/home/media/.config/i3blocks/scripts/volume-pulseaudio/volume-pulseaudio-nord
+markup=pango
+interval=1
+
+[battery]
+command=/home/media/.config/i3blocks/scripts/battery/battery
+interval=30
+LABEL=BAT
+LABEL=⚡
+#BAT_NUMBER=0
+
+[memory]
+command=/home/media/.config/i3blocks/scripts/memory/memory
+label=<span foreground='#81A1C1' size='x-large'> </span>
+color=#ffffff
+markup=pango
+interval=2
+min_width=memor
+
+[cpu_usage]
+command=/home/media/.config/i3blocks/scripts/cpu_usage/cpu_usage
+interval=1
+LABEL=<span foreground='#81A1C1' size='x-large'>﬙</span> 
+markup=pango
+min_width=cpucp
+DECIMALS=0
+
+[nm-vpn]
+command=/home/media/.config/i3blocks/scripts/nm-vpn/nm-vpn
+markup=pango
+background=#81a1c1
+interval=5
+
+[date]
+command=echo "<span foreground='#81A1C1' size='x-large'></span> <span  rise='2pt'>$(date +"%A")</span>"; if [ $button ]; then orage -t; fi
+markup=pango
+interval=1
+
+[date]
+command=echo "<span foreground='#81A1C1' size='x-large'></span> <span  rise='2pt'>$(date +"%Y-%m-%d")</span>"; if [ $button ]; then orage -t; fi
+markup=pango
+interval=1
+
+[time]
+command=echo "<span rise='2pt'>$(date +"%H:%M:%S")</span>"
+label=<span foreground='#81A1C1' size='x-large'></span> 
+markup=pango
+color=#ffffff
+interval=1
+
+[rofi-powermenu]
+command=echo "<span foreground='#81a1c1' size='x-large'></span> "; if [ $button ]; then rofi -show menu -modi 'menu:rofi-power-menu' >/dev/null; fi
+markup=pango
+interval=1
